@@ -4,8 +4,44 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "fa920b51dbc63031c90cd0eb9c073ac1",
+    "content-hash": "181ce6930c6d352d244f9fb2fe45d2a3",
     "packages": [
+        {
+            "name": "candlelight/framework",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CandleLight-Project/CandleLight-Core.git",
+                "reference": "1e59fb197a38074569959b13acbf111033631a92"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CandleLight-Project/CandleLight-Core/zipball/1e59fb197a38074569959b13acbf111033631a92",
+                "reference": "1e59fb197a38074569959b13acbf111033631a92",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "^5.6",
+                "php": "^7.1",
+                "slim/slim": "^3.10"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "CandleLight\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Jannik Schäfer",
+                    "email": "me@jschaefer.io",
+                    "homepage": "https://jschaefer.io/"
+                }
+            ],
+            "description": "CandleLight Core Framework",
+            "time": "2018-08-13T01:41:13+00:00"
+        },
         {
             "name": "container-interop/container-interop",
             "version": "1.2.0",
@@ -838,11 +874,11 @@
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
-        "jschaefer-io/candlelight-core": 20
+        "candlelight/framework": 20
     },
-    "prefer-stable": false,
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^7.1"

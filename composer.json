@@ -9,12 +9,10 @@
             "homepage": "https://jschaefer.io/"
         }
     ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": "^7.1",
-        "jschaefer-io/candlelight-core": "@dev"
-    },
-    "repositories": [{
-        "type": "path",
-        "url": "../CandleLight-Core"
-    }]
+        "candlelight/framework": "dev-master"
+    }
 }
