@@ -1,0 +1,20 @@
+{
+    "name": "jschaefer-io/candlelight",
+    "description": "Headless API Generator",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Jannik Schäfer",
+            "email": "me@jschaefer.io",
+            "homepage": "https://jschaefer.io/"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "jschaefer-io/candlelight-core": "@dev"
+    },
+    "repositories": [{
+        "type": "path",
+        "url": "../CandleLight-Core"
+    }]
+}
