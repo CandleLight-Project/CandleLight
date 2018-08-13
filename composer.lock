@@ -346,35 +346,6 @@
             "time": "2018-08-06T19:58:11+00:00"
         },
         {
-            "name": "jschaefer-io/candlelight-core",
-            "version": "dev-master",
-            "dist": {
-                "type": "path",
-                "url": "../CandleLight-Core",
-                "reference": "1d3363f9e5f82d2f6c078e2c03a3ddd68eea2322",
-                "shasum": null
-            },
-            "require": {
-                "illuminate/database": "^5.6",
-                "php": "^7.1",
-                "slim/slim": "^3.10"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "CandleLight\\": "src/"
-                }
-            },
-            "authors": [
-                {
-                    "name": "Jannik Schäfer",
-                    "email": "me@jschaefer.io",
-                    "homepage": "https://jschaefer.io/"
-                }
-            ],
-            "description": "CandleLight Core Framework"
-        },
-        {
             "name": "nesbot/carbon",
             "version": "1.33.0",
             "source": {
