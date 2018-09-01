@@ -1,6 +1,7 @@
 {
     "name": "candlelight/candlelight",
     "description": "Headless API Generator",
+    "license": "MIT",
     "type": "project",
     "authors": [
         {
