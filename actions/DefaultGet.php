@@ -15,6 +15,11 @@ use Slim\Http\Response;
  */
 class DefaultGet extends Route{
 
+    private static $defaults = [
+        'operator' => '=',
+        'firstOrFail' => false
+    ];
+
     /**
      * Function to execute, if this route is called
      * @param Request $request HTTP Request object
@@ -24,14 +29,14 @@ class DefaultGet extends Route{
      */
     public function dispatch(Request $request, Response $response, array $args){
         $type = $this->getType();
-        $route = $this->getOptions();
+        $atts = $this->parseAttributes(self::$defaults);
 
         /* @var $query Model */
         $query = $type->new();
         foreach ($args as $key => $value) {
-            $query = $query->where($key, $route['operator'], $value);
+            $query = $query->where($key, $atts['operator'], $value);
         }
-        if (isset($route['firstOrFail']) && $route['firstOrFail']) {
+        if ($atts['firstOrFail']) {
             return $query->firstOrFail()->toArray();
         } else {
             return $query->get()->toArray();

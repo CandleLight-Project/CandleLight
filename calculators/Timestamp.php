@@ -6,6 +6,7 @@ namespace CandleLight\Validation;
 use CandleLight\Calculator;
 
 class Timestamp extends Calculator{
+
     public function apply(){
         $this->getModel()->{$this->getField()} = time();
     }

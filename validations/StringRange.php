@@ -10,21 +10,26 @@ use CandleLight\Validation;
  */
 class StringRange extends Validation{
 
+    private static $defaults = [
+        'min' => 0,
+        'max' => PHP_INT_MAX
+    ];
+
     protected function validate(): bool{
         $field = $this->getModel()->{$this->getField()};
-        $values = $this->getValues();
-        if (strlen($field) < $values[0]) {
+        $atts = $this->parseAttributes(self::$defaults);
+        if (strlen($field) < $atts['min']) {
             return true;
         }
-        if (isset($values[1]) && strlen($field) > $values[1]) {
+        if (isset($values[1]) && strlen($field) > $atts['max']) {
             return true;
         }
         return false;
     }
 
     public function getMessage(): string{
-        $values = $this->getValues();
-        return sprintf('%s needs to be between %d and %d digits long.', $this->getField(), $values[0], $values[1]);
+        $atts = $this->parseAttributes(self::$defaults);
+        return sprintf('%s needs to be between %d and %d digits long.', $this->getField(), $atts['min'], $atts['max']);
     }
 }
 

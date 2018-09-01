@@ -16,6 +16,8 @@ use Slim\Http\Response;
  */
 class DefaultPost extends Route{
 
+    private static $defaults = [];
+
     /**
      * Function to execute, if this route is called
      * @param Request $request HTTP Request object
