@@ -2,8 +2,6 @@
 
 use CandleLight\App;
 use CandleLight\DirProvider;
-use CandleLight\Loader;
-use CandleLight\MultiLoader;
 
 define('CDL_ROOT', __DIR__ . DIRECTORY_SEPARATOR);
 define('CDL_CONFIG', CDL_ROOT . 'config' . DIRECTORY_SEPARATOR);
@@ -18,6 +16,9 @@ define('CDL_ACTIONS', CDL_ROOT . 'actions' . DIRECTORY_SEPARATOR);
 
 require_once CDL_VENDOR . 'autoload.php';
 
+$dotenv = new Dotenv\Dotenv(CDL_ROOT);
+$dotenv->load();
+
 // Initialize Application
 $app = new App();
 
@@ -31,7 +32,7 @@ DirProvider::glob(CDL_TYPES . '*.php', 0, ['app' => $app]);          // Load Typ
 DirProvider::glob(CDL_CONFIG . '*.php', 0, ['app' => $app]);        // Load Config files
 
 // Prepare Application
-$app->load();
+$app->load(false);
 
 // Start Applications
 $app->run();

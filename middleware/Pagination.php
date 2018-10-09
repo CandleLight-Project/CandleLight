@@ -24,6 +24,10 @@ class Pagination extends Middleware{
         $response = $next($request, $response);
         $data = json_decode($response->getBody()->__toString());
 
+        if (isset($data->error) && $data->error){
+            return $next($request, $response);
+        }
+
         $url = $this->getUrl($request);
         $params = $request->getQueryParams();
 
