@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/CandleLight-Project/CandleLight-Core.git",
-                "reference": "03e251680f352712587c2eea3987842957c91d1c"
+                "reference": "21edd3fbda823655f14a2f7ce58e317ffb573d2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CandleLight-Project/CandleLight-Core/zipball/03e251680f352712587c2eea3987842957c91d1c",
-                "reference": "03e251680f352712587c2eea3987842957c91d1c",
+                "url": "https://api.github.com/repos/CandleLight-Project/CandleLight-Core/zipball/21edd3fbda823655f14a2f7ce58e317ffb573d2c",
+                "reference": "21edd3fbda823655f14a2f7ce58e317ffb573d2c",
                 "shasum": ""
             },
             "require": {
@@ -43,7 +43,7 @@
                 }
             ],
             "description": "CandleLight Core Framework",
-            "time": "2018-10-09T14:01:50+00:00"
+            "time": "2018-10-15T19:24:30+00:00"
         },
         {
             "name": "container-interop/container-interop",
