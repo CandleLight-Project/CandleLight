@@ -1,0 +1,16 @@
+<?php
+
+use CandleLight\Filter;
+
+class {{name}} extends Filter{
+
+    /**
+     * Applies the filter to the current field
+     */
+    public function apply(): void{
+        // implement filter here
+    }
+}
+
+/* @var \CandleLight\App $app */
+$app->addFilter('{{handle}}', {{name}}::class);

@@ -1,0 +1,16 @@
+<?php
+
+use CandleLight\Calculator;
+
+class {{name}} extends Calculator{
+
+    /**
+     * Applies the calculator to the current field
+     */
+    public function apply(): void{
+        // implement calculator here
+    }
+}
+
+/* @var \CandleLight\App $app */
+$app->addCalculator('{{handle}}', {{name}}::class);

@@ -1,0 +1,22 @@
+<?php
+
+use CandleLight\Middleware;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+
+class {{name}} extends Middleware{
+    /**
+     * Applies the Middleware to the current Request
+     * @param ServerRequestInterface $request Request Object
+     * @param ResponseInterface $response Response Object
+     * @param callable $next calls the next middleware
+     * @return ResponseInterface
+     */
+    function apply(ServerRequestInterface $request, ResponseInterface $response, callable $next): ResponseInterface{
+        // implement middleware here
+        return $response;
+    }
+}
+
+/* @var \CandleLight\App $app */
+$app->addMiddleware('{{handle}}', {{name}}::class);

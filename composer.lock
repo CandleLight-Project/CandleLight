@@ -4,8 +4,42 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1bee45c776460b2b232dfb0ab569d4b9",
+    "content-hash": "eef4dedfe220dc758e5b3dd1def69190",
     "packages": [
+        {
+            "name": "candlelight/cli",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CandleLight-Project/CandleLight-CLI.git",
+                "reference": "24908e0a16e4b44617228660ac384e2c8ac12a92"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CandleLight-Project/CandleLight-CLI/zipball/24908e0a16e4b44617228660ac384e2c8ac12a92",
+                "reference": "24908e0a16e4b44617228660ac384e2c8ac12a92",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "CandleLight\\Artisan\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jannik Schäfer",
+                    "email": "me@jschaefer.io",
+                    "homepage": "https://jschaefer.io/"
+                }
+            ],
+            "description": "CLI for the CandleLight Framework",
+            "time": "2018-10-18T17:55:13+00:00"
+        },
         {
             "name": "candlelight/framework",
             "version": "dev-master",
@@ -948,7 +982,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "candlelight/framework": 20
+        "candlelight/framework": 20,
+        "candlelight/cli": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

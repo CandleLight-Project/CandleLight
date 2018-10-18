@@ -1,0 +1,69 @@
+<?php
+
+/**
+ * Register a content type named "{{type}}"
+ * in the system
+ */
+$app->addType('{{type}}', [
+    "title" => "{{title}}",
+    "description" => "{{description}}",
+    "connection" => "default",
+    "table" => "{{type}}",
+    "routing" => [
+        "get" => [
+            [
+                "url" => "/{{type}}",
+                "action" => "default",
+                "attributes" => [],
+                "middleware" => [
+                    "pagination"
+                ]
+            ],
+            [
+                "url" => "/{{type}}/{id}",
+                "action" => "default",
+                "attributes" => [
+                    "operator" => "=",
+                    "firstOrFail" => true,
+                ],
+                "middleware" => []
+            ]
+        ],
+        "post" => [
+            [
+                "url" => "/{{type}}",
+                "action" => "default",
+                "middleware" => [
+                    'authenticate'
+                ]
+            ]
+        ],
+        "delete" => [
+            [
+                "url" => "/{{type}}/{id}",
+                "action" => "default",
+                "attributes" => [
+                    "operator" => "=",
+                    "firstOrFail" => true,
+                ],
+                "middleware" => [
+                    'authenticate'
+                ]
+            ]
+        ],
+        "put" => [
+            [
+                "url" => "/{{type}}/{id}",
+                "action" => "default",
+                "attributes" => [
+                    "operator" => "=",
+                    "firstOrFail" => true,
+                ],
+                "middleware" => [
+                    'authenticate'
+                ]
+            ]
+        ]
+    ],
+    "fields" => []
+]);

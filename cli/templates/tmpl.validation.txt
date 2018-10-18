@@ -1,0 +1,26 @@
+<?php
+
+use CandleLight\Validation;
+
+class {{name}} extends Validation{
+
+    /**
+     * User defined validation process
+     * @return bool true on error
+     */
+    protected function validate(): bool{
+        // implement validation here
+        return false;
+    }
+
+    /**
+     * User defined validation message
+     * @return string
+     */
+    public function getMessage(): string{
+        return sprintf('Validation failed on field: %s', $this->getField());
+    }
+}
+
+/* @var \CandleLight\App $app */
+$app->addValidation('{{handle}}', {{name}}::class);

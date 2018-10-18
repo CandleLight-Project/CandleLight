@@ -15,6 +15,7 @@
     "require": {
         "php": "^7.1",
         "candlelight/framework": "dev-master",
+        "candlelight/cli": "dev-master",
         "firebase/php-jwt": "^5.0",
         "vlucas/phpdotenv": "^2.5"
     }

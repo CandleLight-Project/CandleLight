@@ -6,6 +6,7 @@ use CandleLight\DirProvider;
 // Base
 define('CDL_ROOT', __DIR__ . DIRECTORY_SEPARATOR);
 define('CDL_APP', CDL_ROOT . 'app' . DIRECTORY_SEPARATOR);
+define('CDL_CLI', CDL_ROOT . 'cli' . DIRECTORY_SEPARATOR);
 
 // Vendors
 define('CDL_VENDOR', CDL_ROOT . 'vendor' . DIRECTORY_SEPARATOR);
