@@ -7,7 +7,7 @@ use CandleLight\Calculator;
 
 class Timestamp extends Calculator{
 
-    public function apply(){
+    public function apply(): void{
         $this->getModel()->{$this->getField()} = time();
     }
 }

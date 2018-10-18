@@ -3,19 +3,26 @@
 use CandleLight\App;
 use CandleLight\DirProvider;
 
+// Base
 define('CDL_ROOT', __DIR__ . DIRECTORY_SEPARATOR);
-define('CDL_CONFIG', CDL_ROOT . 'config' . DIRECTORY_SEPARATOR);
-define('CDL_TYPES', CDL_ROOT . 'types' . DIRECTORY_SEPARATOR);
+define('CDL_APP', CDL_ROOT . 'app' . DIRECTORY_SEPARATOR);
+
+// Vendors
 define('CDL_VENDOR', CDL_ROOT . 'vendor' . DIRECTORY_SEPARATOR);
 
-define('CDL_VALIDATIONS', CDL_ROOT . 'validations' . DIRECTORY_SEPARATOR);
-define('CDL_CALCULATORS', CDL_ROOT . 'calculators' . DIRECTORY_SEPARATOR);
-define('CDL_FILTERS', CDL_ROOT . 'filters' . DIRECTORY_SEPARATOR);
-define('CDL_MIDDLEWARE', CDL_ROOT . 'middleware' . DIRECTORY_SEPARATOR);
-define('CDL_ACTIONS', CDL_ROOT . 'actions' . DIRECTORY_SEPARATOR);
+// Application Data
+define('CDL_CONFIG', CDL_APP . 'config' . DIRECTORY_SEPARATOR);
+define('CDL_TYPES', CDL_APP . 'types' . DIRECTORY_SEPARATOR);
+define('CDL_VALIDATIONS', CDL_APP . 'validations' . DIRECTORY_SEPARATOR);
+define('CDL_CALCULATORS', CDL_APP . 'calculators' . DIRECTORY_SEPARATOR);
+define('CDL_FILTERS', CDL_APP . 'filters' . DIRECTORY_SEPARATOR);
+define('CDL_MIDDLEWARE', CDL_APP . 'middleware' . DIRECTORY_SEPARATOR);
+define('CDL_ACTIONS', CDL_APP . 'actions' . DIRECTORY_SEPARATOR);
 
+// Load Vendor Files
 require_once CDL_VENDOR . 'autoload.php';
 
+// Prepare environment
 $dotenv = new Dotenv\Dotenv(CDL_ROOT);
 $dotenv->load();
 
@@ -34,5 +41,8 @@ DirProvider::glob(CDL_CONFIG . '*.php', 0, ['app' => $app]);        // Load Conf
 // Prepare Application
 $app->load(false);
 
-// Start Applications
-$app->run();
+
+if (CDL_START){
+    // Start Applications
+    $app->run();
+}

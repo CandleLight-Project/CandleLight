@@ -11,9 +11,9 @@ class SerializeField extends Calculator{
         'field' => false
     ];
 
-    public function apply(){
+    public function apply(): void{
         $atts = $this->parseAttributes(self::$defaults);
-        if (!$atts['field']){
+        if (!$atts['field']) {
             return;
         }
         $field = $atts['field'];

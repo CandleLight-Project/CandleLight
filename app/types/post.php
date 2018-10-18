@@ -33,7 +33,9 @@ $app->addType('post', [
             [
                 "url" => "/post",
                 "action" => "default",
-                "middleware" => []
+                "middleware" => [
+                    'authenticate'
+                ]
             ]
         ],
         "delete" => [
@@ -44,7 +46,9 @@ $app->addType('post', [
                     "operator" => "=",
                     "firstOrFail" => true,
                 ],
-                "middleware" => []
+                "middleware" => [
+                    'authenticate'
+                ]
             ]
         ],
         "put" => [
@@ -55,6 +59,9 @@ $app->addType('post', [
                     "operator" => "=",
                     "firstOrFail" => true,
                 ],
+                "middleware" => [
+                    'authenticate'
+                ]
             ]
         ]
     ],

@@ -12,7 +12,8 @@ class PasswordHash extends Calculator{
         'salt' => ''
     ];
 
-    public function apply(){
+
+    public function apply(): void{
         $atts = $this->parseAttributes(self::$defaults);
         if (!$atts['field'] || empty($atts['salt'])) {
             return;
