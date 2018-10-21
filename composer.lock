@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/CandleLight-Project/CandleLight-CLI.git",
-                "reference": "24908e0a16e4b44617228660ac384e2c8ac12a92"
+                "reference": "3d5c0eb6d62d8df17deb2e6892677ec98073fd2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CandleLight-Project/CandleLight-CLI/zipball/24908e0a16e4b44617228660ac384e2c8ac12a92",
-                "reference": "24908e0a16e4b44617228660ac384e2c8ac12a92",
+                "url": "https://api.github.com/repos/CandleLight-Project/CandleLight-CLI/zipball/3d5c0eb6d62d8df17deb2e6892677ec98073fd2e",
+                "reference": "3d5c0eb6d62d8df17deb2e6892677ec98073fd2e",
                 "shasum": ""
             },
             "type": "library",
@@ -38,7 +38,7 @@
                 }
             ],
             "description": "CLI for the CandleLight Framework",
-            "time": "2018-10-18T17:55:13+00:00"
+            "time": "2018-10-21T20:15:44+00:00"
         },
         {
             "name": "candlelight/framework",
@@ -46,12 +46,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/CandleLight-Project/CandleLight-Core.git",
-                "reference": "21edd3fbda823655f14a2f7ce58e317ffb573d2c"
+                "reference": "a8f9b2d28e48a93a3b337abfd57276b227ec40f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CandleLight-Project/CandleLight-Core/zipball/21edd3fbda823655f14a2f7ce58e317ffb573d2c",
-                "reference": "21edd3fbda823655f14a2f7ce58e317ffb573d2c",
+                "url": "https://api.github.com/repos/CandleLight-Project/CandleLight-Core/zipball/a8f9b2d28e48a93a3b337abfd57276b227ec40f2",
+                "reference": "a8f9b2d28e48a93a3b337abfd57276b227ec40f2",
                 "shasum": ""
             },
             "require": {
@@ -77,7 +77,7 @@
                 }
             ],
             "description": "CandleLight Core Framework",
-            "time": "2018-10-15T19:24:30+00:00"
+            "time": "2018-10-21T20:16:25+00:00"
         },
         {
             "name": "container-interop/container-interop",

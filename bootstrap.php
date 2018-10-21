@@ -18,6 +18,7 @@ define('CDL_VALIDATIONS', CDL_APP . 'validations' . DIRECTORY_SEPARATOR);
 define('CDL_CALCULATORS', CDL_APP . 'calculators' . DIRECTORY_SEPARATOR);
 define('CDL_FILTERS', CDL_APP . 'filters' . DIRECTORY_SEPARATOR);
 define('CDL_MIDDLEWARE', CDL_APP . 'middleware' . DIRECTORY_SEPARATOR);
+define('CDL_MIGRATIONS', CDL_APP . 'migrations' . DIRECTORY_SEPARATOR);
 define('CDL_ACTIONS', CDL_APP . 'actions' . DIRECTORY_SEPARATOR);
 
 // Load Vendor Files
@@ -35,6 +36,7 @@ DirProvider::glob(CDL_VALIDATIONS . '*.php', 0, ['app' => $app]);    // Load Val
 DirProvider::glob(CDL_CALCULATORS . '*.php', 0, ['app' => $app]);    // Load Calculators
 DirProvider::glob(CDL_FILTERS . '*.php', 0, ['app' => $app]);        // Load Filters
 DirProvider::glob(CDL_MIDDLEWARE . '*.php', 0, ['app' => $app]);     // Load Middleware
+DirProvider::glob(CDL_MIGRATIONS . '*.php', 0, ['app' => $app]);     // Load Migrations
 DirProvider::glob(CDL_ACTIONS . '*.php', 0, ['app' => $app]);        // Load Custom Routes
 DirProvider::glob(CDL_TYPES . '*.php', 0, ['app' => $app]);          // Load Types
 DirProvider::glob(CDL_CONFIG . '*.php', 0, ['app' => $app]);        // Load Config files
@@ -43,7 +45,7 @@ DirProvider::glob(CDL_CONFIG . '*.php', 0, ['app' => $app]);        // Load Conf
 $app->load(false);
 
 
-if (CDL_START){
+if (CDL_START) {
     // Start Applications
     $app->run();
 }
