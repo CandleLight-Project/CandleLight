@@ -12,7 +12,7 @@ $app->addMigration(__FILE__, new class($app) extends Migration{
      */
     public function up(): void{
         $schema = $this->getSchema('default');
-        $schema->create('post', function (Blueprint $table){
+        $schema->create('posts', function (Blueprint $table){
             $table->increments('id');
             $table->string('title', 255);
             $table->string('slug', 255);
@@ -26,6 +26,6 @@ $app->addMigration(__FILE__, new class($app) extends Migration{
      * Method called, when the migration is rolled back
      */
     public function down(): void{
-        $this->getSchema('default')->drop('post');
+        $this->getSchema('default')->drop('posts');
     }
 });

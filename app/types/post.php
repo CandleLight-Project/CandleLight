@@ -14,7 +14,7 @@ class Post extends Model{
             "title" => "Blog posts",
             "description" => "Main blog post type.",
             "connection" => "default",
-            "table" => "post",
+            "table" => "posts",
             "routing" => [
                 "get" => [
                     [
@@ -41,6 +41,10 @@ class Post extends Model{
                         "action" => "default",
                         "middleware" => [
                         ]
+                    ],
+                    [
+                        "url" => "/post/image",
+                        "action" => "add-image"
                     ]
                 ],
                 "delete" => [
