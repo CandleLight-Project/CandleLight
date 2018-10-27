@@ -16,12 +16,6 @@ use Slim\Http\Response;
  */
 class MePost extends Route{
 
-    private static $defaults = [
-        'duration' => 86400,
-        'key' => 'not_meant_to_be_like_this',
-        'algo' => 'HS256'
-    ];
-
     /**
      * Function to execute, if this route is called
      * @param Request $request HTTP Request object
@@ -61,10 +55,9 @@ class MePost extends Route{
      * @return array
      */
     private function jwtEncode(int $user): string{
-        $atts = $this->parseAttributes(self::$defaults);
         $token = [
             'iat' => time(),
-            'exp' => time() + $atts['duration'],
+            'exp' => time() + (int)$_ENV['JWT_DURATION'],
             'user' => $user
         ];
         return JWT::encode($token, $_ENV['JWT_KEY'], $_ENV['JWT_ALGO']);

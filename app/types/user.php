@@ -52,25 +52,30 @@ $app->addType('user', [
             ]
         ],
         "delete" => [
-//            [
-//                "url" => "/user/{id}",
-//                "action" => "default",
-//                "attributes" => [
-//                    "operator" => "=",
-//                    "firstOrFail" => true,
-//                ],
-//                "middleware" => []
-//            ]
+            [
+                "url" => "/user/{id}",
+                "action" => "default",
+                "attributes" => [
+                    "operator" => "=",
+                    "firstOrFail" => true,
+                ],
+                "middleware" => [
+                    "authenticate"
+                ]
+            ]
         ],
         "put" => [
-//            [
-//                "url" => "/user/{id}",
-//                "action" => "default",
-//                "attributes" => [
-//                    "operator" => "=",
-//                    "firstOrFail" => true,
-//                ],
-//            ]
+            [
+                "url" => "/user/{id}",
+                "action" => "default",
+                "attributes" => [
+                    "operator" => "=",
+                    "firstOrFail" => true,
+                ],
+                "middleware" => [
+                    "authenticate"
+                ]
+            ]
         ]
     ],
     "fields" => [

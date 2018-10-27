@@ -15,9 +15,7 @@ $app->addType('{{type}}', [
                 "url" => "/{{type}}",
                 "action" => "default",
                 "attributes" => [],
-                "middleware" => [
-                    "pagination"
-                ]
+                "middleware" => []
             ],
             [
                 "url" => "/{{type}}/{id}",
@@ -33,9 +31,7 @@ $app->addType('{{type}}', [
             [
                 "url" => "/{{type}}",
                 "action" => "default",
-                "middleware" => [
-                    'authenticate'
-                ]
+                "middleware" => []
             ]
         ],
         "delete" => [
@@ -46,9 +42,7 @@ $app->addType('{{type}}', [
                     "operator" => "=",
                     "firstOrFail" => true,
                 ],
-                "middleware" => [
-                    'authenticate'
-                ]
+                "middleware" => []
             ]
         ],
         "put" => [
@@ -59,11 +53,16 @@ $app->addType('{{type}}', [
                     "operator" => "=",
                     "firstOrFail" => true,
                 ],
-                "middleware" => [
-                    'authenticate'
-                ]
+                "middleware" => []
             ]
         ]
     ],
-    "fields" => []
+    "fields" => [
+        [
+            "name" => "field",
+            "validation" => [],
+            "calculations" => [],
+            "filters" => []
+        ]
+    ]
 ]);

@@ -41,9 +41,9 @@ class DefaultPut extends Route{
         foreach ($request->getParams() as $key => $value) {
             $query->{$key} = $value;
         }
-        $query->applyCalculators($app, $type->getSettings());
-        $query->applyFilters($app, $type->getSettings());
-        if ($query->doValidation($app, $type->getSettings())) {
+        $query->applyCalculators($app);
+        $query->applyFilters($app);
+        if ($query->doValidation($app)) {
             return new Error($query->getValidationMessage());
         }
         $query->update();
