@@ -29,7 +29,7 @@ function isSnakeCase(string $s): bool{
  * @throws Exception throws an exception if the string is invalid
  */
 function checkDirString(string $s): string{
-    if (preg_match('/[\\,\/]/', $s) !== false){
+    if (preg_match('/[\\,\/]/', $s) != false){
         throw new Exception('No Directory Separator allowed');
     }
     return $s;
