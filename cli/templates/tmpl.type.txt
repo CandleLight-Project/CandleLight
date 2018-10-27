@@ -1,68 +1,83 @@
 <?php
 
+use CandleLight\App;
+use CandleLight\Model;
+
 /**
  * Register a content type named "{{type}}"
  * in the system
  */
-$app->addType('{{type}}', [
-    "title" => "{{title}}",
-    "description" => "{{description}}",
-    "connection" => "default",
-    "table" => "{{type}}",
-    "routing" => [
-        "get" => [
-            [
-                "url" => "/{{type}}",
-                "action" => "default",
-                "attributes" => [],
-                "middleware" => []
+class {{class}} extends Model{
+
+    /**
+     * Returns the associated type-settings array
+     * @return array Type settings array
+     */
+    public static function getTypeSettings(): array{
+        return [
+            "title" => "{{title}}",
+            "description" => "{{description}}",
+            "connection" => "default",
+            "table" => "{{type}}",
+            "routing" => [
+                "get" => [
+                    [
+                        "url" => "/{{type}}",
+                        "action" => "default",
+                        "attributes" => [],
+                        "middleware" => []
+                    ],
+                    [
+                        "url" => "/{{type}}/{id}",
+                        "action" => "default",
+                        "attributes" => [
+                            "operator" => "=",
+                            "firstOrFail" => true,
+                        ],
+                        "middleware" => []
+                    ]
+                ],
+                "post" => [
+                    [
+                        "url" => "/{{type}}",
+                        "action" => "default",
+                        "middleware" => []
+                    ]
+                ],
+                "delete" => [
+                    [
+                        "url" => "/{{type}}/{id}",
+                        "action" => "default",
+                        "attributes" => [
+                            "operator" => "=",
+                            "firstOrFail" => true,
+                        ],
+                        "middleware" => []
+                    ]
+                ],
+                "put" => [
+                    [
+                        "url" => "/{{type}}/{id}",
+                        "action" => "default",
+                        "attributes" => [
+                            "operator" => "=",
+                            "firstOrFail" => true,
+                        ],
+                        "middleware" => []
+                    ]
+                ]
             ],
-            [
-                "url" => "/{{type}}/{id}",
-                "action" => "default",
-                "attributes" => [
-                    "operator" => "=",
-                    "firstOrFail" => true,
-                ],
-                "middleware" => []
+            "fields" => [
+                [
+                    "name" => "field",
+                    "validation" => [],
+                    "calculations" => [],
+                    "filters" => []
+                ]
             ]
-        ],
-        "post" => [
-            [
-                "url" => "/{{type}}",
-                "action" => "default",
-                "middleware" => []
-            ]
-        ],
-        "delete" => [
-            [
-                "url" => "/{{type}}/{id}",
-                "action" => "default",
-                "attributes" => [
-                    "operator" => "=",
-                    "firstOrFail" => true,
-                ],
-                "middleware" => []
-            ]
-        ],
-        "put" => [
-            [
-                "url" => "/{{type}}/{id}",
-                "action" => "default",
-                "attributes" => [
-                    "operator" => "=",
-                    "firstOrFail" => true,
-                ],
-                "middleware" => []
-            ]
-        ]
-    ],
-    "fields" => [
-        [
-            "name" => "field",
-            "validation" => [],
-            "calculations" => [],
-            "filters" => []
-        ]
-    ]
-]);
+        ];
+    }
+}
+
+/** @var App $app */
+$app->addType('{{type}}', {{class}}::class);

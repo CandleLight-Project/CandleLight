@@ -102,6 +102,7 @@ $client->addCommand(new Command('make', 'Generate a CDL-Block of the given type'
         // Request all Fields in one big chunk
         $fields = [
             'type' => Client::prompt('Type slug:'),
+            'class' => Client::prompt('Model ClassName:'),
             'title' => Client::prompt('Type Title text:'),
             'description' => Client::prompt('Type Description text:')
         ];
