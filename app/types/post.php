@@ -5,6 +5,10 @@ use CandleLight\Model;
 
 class Post extends Model{
 
+    protected $casts = [
+        'meta' => 'array'
+    ];
+
     /**
      * Returns the associated type-settings array
      * @return array Type settings array
@@ -40,11 +44,8 @@ class Post extends Model{
                         "url" => "/post",
                         "action" => "default",
                         "middleware" => [
+                            "authenticate"
                         ]
-                    ],
-                    [
-                        "url" => "/post/image",
-                        "action" => "add-image"
                     ]
                 ],
                 "delete" => [
@@ -96,6 +97,9 @@ class Post extends Model{
                 ],
                 [
                     "name" => "content",
+                    "validation" => [
+                        "not-missing"
+                    ]
                 ],
                 [
                     "name" => "meta",
